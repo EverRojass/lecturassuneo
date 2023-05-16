@@ -1,16 +1,21 @@
-<!doctype html>
-<html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lecturas Suneo</title>
-    <script src="dinamic/view/js/jquery-3.6.0.min.js" type="text/javascript"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  </head>
-  <body>
-    <?php
-        require_once('public/public.php');
-    ?>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-  </body>
-</html>
+<?php
+    //INDEX GENERAL DE LA APLICACIÓN
+    error_reporting(E_ALL); // Error/Exception engine, always use E_ALL
+    ini_set('ignore_repeated_errors', TRUE); // always use TRUE
+    ini_set('display_errors', FALSE); // Error/Exception display, use FALSE only in production environment or real server. Use TRUE in development environment
+    ini_set('log_errors', TRUE); // Error/Exception file logging engine.
+    ini_set("error_log", "./php-error.log");
+    error_log( "Inicio de aplicación web");
+
+    require_once 'config/config.php';
+    require_once 'libs/database.php';
+    require_once 'classes/errormessages.php';  
+    require_once 'classes/successmessages.php';  
+    require_once 'libs/controller.php';
+    require_once 'libs/model.php';
+    require_once 'libs/view.php';
+    require_once 'libs/app.php';  
+    
+    //INSTANCIAR LA CLASE APP EN EN EL ARCHIVO 'libs/app.php'
+    $app=new App();
+?>
